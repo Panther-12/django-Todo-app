@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>Evolve&Progress Africa</title>
+		<style>
+			.body-content{
+				display: flex;
+				flex-direction: row;
+			}
+			.side-nav-wrapper{
+				width: 160px;
+				height: 100vh;
+				background: linear-gradient(to left, white, black);
+				position: fixed;
+				overflow: hidden;
+				z-index: 1;
+			}
+			.side-nav-wrapper>a{
+				text-decoration: none;
+				padding: 10px;
+				font-size: 20px;
+				color: white;
+				display: block;
+			}
+			#content{
+				margin-left: 160px;
+				height: 100vh;
+			}
+			ol>li>a{
+				text-decoration: none;
+				color: black;
+				font-weight: bold;
+				transition: color 0.5s ease-in-out;
+			}
+			ol>li>a:hover{
+				color: blue;
+				cursor: pointer;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="body-content">
+			<div class="side-nav-wrapper">
+				<a href="/">Home</a>
+				<a href="/create">Create</a>
+				<a href="/home">View</a>
+			</div>
+			<div id="content" name="content">  
+				{% block content%}
+				{% endblock%}
+			</div>
+		</div>
+	</body>
+</html>

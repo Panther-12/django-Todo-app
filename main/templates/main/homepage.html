@@ -1,0 +1,9 @@
+{% extends 'main/base.html' %}
+
+{% block content%}
+		{% for item in items %}
+		<ol>
+			<li><a href="/{{item.id}}">{{item}}</a></li>
+		</ol>
+		{% endfor %}
+{% endblock %}

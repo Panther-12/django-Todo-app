@@ -1,0 +1,20 @@
+{% extends 'main/base.html'%}
+
+{%block content%}
+	<h2>{{lists.name}}</h2>
+	<form method="post" action="#">
+		{%csrf_token%}
+		<ul>
+			{%for item in lists.item_set.all%}
+				{%if item.complete == True%}
+					<li><input type="checkbox" value="checked", name="c{{item.id}}" checked>{{item.text}} - COMPLETE</li>
+				{%else%}
+					<li><input type="checkbox" value="checked", name="c{{item.id}}">{{item.text}} - INCOMPLETE</li>
+				{%endif%}
+			{%endfor%}
+	</ul>
+	<button type="submit" name="save" value="save">Save</button>
+	<input type="text" name="new">
+	<button type="submit" name="newItem" value="newItem">new Item</button>
+</form>
+{%endblock%}
